@@ -1,0 +1,18 @@
+{
+  "background": {
+    "page": "background.html"
+  },
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "description": "This extension creates a password protected whitelist to restrict kids' access to sites",
+  "manifest_version": 2,
+  "name": "IsaSiteBlocker",
+  "options_ui": {
+    "chrome_style": true,
+    "page": "options.html"
+ },
+  "permissions": [ "storage", "tabs", "webRequest", "webRequestBlocking", "http://*/*", "https://*/*" ],
+  "version": "1.0"
+}
