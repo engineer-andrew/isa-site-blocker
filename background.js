@@ -45,13 +45,24 @@ const redirect = (tabId, url) => {
   window.chrome.tabs.update(tabId, {url});
 };
 
-const reload = () => {
-  loadSettings(({blockPages, blockOthers, whitelist}) => {
+const reload = (changes, namespace) => {
+  loadSettings(({blockPages, blockOthers, usePassword, whitelist}) => {
     settings.blockPages = blockPages;
     settings.blockOthers = blockOthers;
+    settings.usePassword = usePassword;
     // map the string whitelist options to regex patterns so they can be evaluated later
     settings.whitelist = whitelist.map(compile);
   });
+
+  for (var key in changes) {
+    var storageChange = changes[key];
+    console.log('Storage key "%s" in namespace "%s" changed. ' +
+                'Old value was "%s", new value is "%s".',
+                key,
+                namespace,
+                storageChange.oldValue,
+                storageChange.newValue);
+  }
 };
 
 // 1. add an event listener to window.load

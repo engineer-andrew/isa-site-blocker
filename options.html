@@ -8,20 +8,41 @@
   </head>
 
   <body>
-    <div class='app-options'>
-      <p>
-        In order to use this extension, activate the blocking options you need below, and edit your list of safe websites. This extension will automatically block access to any website that is not in that list.
-      </p>
-      <label class="app-options__option">
-        <input class="app-options__checkbox" type="checkbox" id="app-options-block-pages" name="block-pages" />
-        <span class="app-options__label">Block pages from websites not in my list</span>
-      </label>
-      <label class="app-options__option">
-        <input class="app-options__checkbox" type="checkbox" id="app-options-block-others" name="block-others" />
-        <span class="app-options__label">Block other resources (images, scripts, etc.) from websites not in my list</span>
-      </label>
-      <textarea id="app-options-whitelist" class="app-options__textarea"></textarea>
-    </div>
+    <form id="app-options-form">
+      <div class='app-options' id="app-options">
+        <h3 id="app-options-saved-message">
+          Your changes have been saved.
+        </h3>
+        <p>
+          In order to use this extension, activate the blocking options you need below, and edit your list of safe websites. This extension will automatically block access to any website that is not in that list.
+        </p>
+        <label class="app-options__option">
+          <input class="app-options__checkbox" type="checkbox" id="app-options-block-pages" name="block-pages" />
+          <span class="app-options__label">Block pages from websites not in my list</span>
+        </label>
+        <label class="app-options__option">
+          <input class="app-options__checkbox" type="checkbox" id="app-options-block-others" name="block-others" />
+          <span class="app-options__label">Block other resources (images, scripts, etc.) from websites not in my list</span>
+        </label>
+        <textarea id="app-options-whitelist" class="app-options__textarea"></textarea>
+        <label class="app-options__option">
+          <input class="app-options__checkbox" type="checkbox" id="app-options-password" name="password-protect" />
+          <span class="app-options__label">Password protect the options page</span>
+        </label>
+        <input type="password" id="app-options-password-input" />
+        <button type="submit" id="app-options-save-changes">Save Changes</button>
+      </div>
+    </form>
+    <form id="app-password-form">
+      <div class="app-password" id="app-password">
+        <label for="app-password-input">
+          Enter your password
+          <input type="password" id="app-password-input" />
+        </label>
+        <span id="app-password-input-error">That password is incorrect.</span>
+        <button type="submit" id="app-password-submit">Submit</button>
+      </div>
+    </form>
     <script type="module" src="options.js"></script>
   </body>
 </html>

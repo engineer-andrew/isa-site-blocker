@@ -7,7 +7,7 @@ const domain = /^.+\.[^.]+$/
 const simpleDomain = /^[^.*]+\.[^.]+$/
 
 export function compile (glob) {
-  debugger;
+  // TODO: this should work if you just pass in a value without qualification (e.g. facebook)
   // if not a valid glob, ignore it
   if (!ipv4.test(glob) && !ipv6.test(glob) && !localhost.test(glob) && !domain.test(glob)) {
     return () => false;

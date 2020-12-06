@@ -4,14 +4,17 @@ function getStorage () {
 
 export function getItems(defaults, callback) {
   const storage = getStorage();
+  if (!callback) {
+    callback = () => {};
+  }
   const items = storage.get(defaults, callback);
   return items;
 };
 
-export function onChangeItems (callback) {
-}
-
-export function setItems (items, callback) {
+export function setItems(items, callback) {
   const storage = getStorage();
+  if (!callback) {
+    callback = () => {};
+  }
   storage.set(items, callback);
 };

@@ -1,5 +1,10 @@
 .app-options {
-  display: flex;
+  display: none;
+  flex-direction: column;
+}
+
+.app-password {
+  display: none;
   flex-direction: column;
 }
 
@@ -39,4 +44,22 @@
   resize: none;
   border: 1px solid black;
   border-radius: 2px;
+}
+
+#app-options-password-input {
+  display: none;
+}
+
+#app-password-input {
+  margin-bottom: 1rem;
+}
+
+#app-password-input-error {
+  color: red;
+  display: none;
+}
+
+#app-options-saved-message {
+  color: green;
+  display: none;
 }

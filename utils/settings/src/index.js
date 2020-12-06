@@ -1,8 +1,10 @@
-import { getItems, onChangeItems, setItems } from "../../../storage.js";
+import { getItems, setItems } from "../../../storage.js";
 
 const defaults = {
   blockPages: false,
   blockOthers: false,
+  password: null,
+  usePassword: false,
   whitelist: ['bing.*', 'google.*', 'paypal.me', 'wikimedia.org', 'wikipedia.org']
 }
 
@@ -14,10 +16,6 @@ export function loadSettings(callback) {
   getItems(defaultSettings(), callback);
 }
 
-export function onChangeSettings (callback) {
-  onChangeItems(callback);
-}
-
-export function saveSettings (settings, callback) {
+export function saveSettings(settings, callback) {
   setItems(settings, callback);
 }
